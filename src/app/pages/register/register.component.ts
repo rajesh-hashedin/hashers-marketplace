@@ -34,7 +34,7 @@ export class RegisterComponent {
         ]),
         mobile: new FormControl('', [
           Validators.required,
-          Validators.pattern('^[2-9]{2}[0-9]{8}$'),
+          Validators.pattern('^[0-9]{10}$'),
         ]),
         email: new FormControl('', [
           Validators.required,
