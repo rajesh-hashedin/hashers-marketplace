@@ -1,0 +1,38 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <img
+        height="300"
+        src="https://static-00.iconduck.com/assets.00/angular-icon-2048x2048-24b236vf.png"
+        alt="Card image cap"
+      />
+    </div>
+    <div class="col">
+      <h1>{{ product.name }}</h1>
+      <h5>{{ product.price }}</h5>
+      <div>{{ product.description }}</div>
+      @if(!product.ownProduct){ @if(product.alreadySent){
+      <button class="btn btn-info">Already Sent</button>
+      } @else{
+      <form [formGroup]="sendMessageForm" (submit)="onSubmit()">
+        <div class="mb-3">
+          <textarea
+            formControlName="message"
+            type="text"
+            class="form-control"
+            id="message"
+            placeholder="message"
+          ></textarea>
+          @if (sendMessageForm.get("message")?.hasError("required") &&
+          sendMessageForm.get("message")?.touched) {
+          <div class="form-text text-danger fw-bold">message is required</div>
+          }
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">Send message</button>
+        </div>
+      </form>
+      } }
+    </div>
+  </div>
+</div>

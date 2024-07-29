@@ -1,0 +1,33 @@
+<div class="d-flex p-2 gap-2 flex-wrap">
+  @if(!products.length){
+  <div>No products</div>
+  } @for(product of products;track product.id){
+  <div class="card" style="width: 15rem">
+    <img
+      height="200"
+      class="card-img-top"
+      src="https://static-00.iconduck.com/assets.00/angular-icon-2048x2048-24b236vf.png"
+      alt="Card image cap"
+    />
+    <div class="card-body">
+      <h5 class="card-title">{{ product.name }}</h5>
+      <div class="card-text">
+        <div>{{ product.description }}</div>
+        <div>{{ product.price }}</div>
+      </div>
+      @if(product.alreadySent){
+      <button (click)="showProductDescription(product.id)" class="btn btn-info">
+        {{ product.ownProduct ? "See" : "Already Sent" }}
+      </button>
+      } @else{
+      <button
+        (click)="showProductDescription(product.id)"
+        class="btn btn-primary"
+      >
+        {{ product.ownProduct ? "See" : "Buy" }}
+      </button>
+      }
+    </div>
+  </div>
+  }
+</div>
