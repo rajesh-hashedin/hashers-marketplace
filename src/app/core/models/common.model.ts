@@ -14,3 +14,11 @@ export interface Product {
   alreadySent: boolean;
   ownProduct: boolean;
 }
+export interface IncomingRequest {
+  productName: string;
+  productPrice: string;
+  productDescription: string;
+  customerName: string;
+  customerMobile: string;
+  customerMessage: string;
+}

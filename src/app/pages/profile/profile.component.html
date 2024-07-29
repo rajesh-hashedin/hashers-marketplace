@@ -50,9 +50,40 @@
         }
       </div>
       } @case(2){
-      <div>Incoming request</div>
+      <div class="d-flex p-2 gap-2 flex-wrap">
+        @for(item of incomingRequest;track item.customerMobile){
+        <div class="card" style="width: 15rem">
+          <div class="card-body">
+            <h5 class="card-title">Name: {{ item.customerName }}</h5>
+            <div class="card-text">
+              <div>Mobile: {{ item.customerMobile }}</div>
+              <div>Product name: {{ item.productName }}</div>
+              <div>Message: {{ item.customerMessage }}</div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
       } @case(3){
-      <div>Sent request</div>
+      <div class="d-flex p-2 gap-2 flex-wrap">
+        @for(product of sentRequest;track product.id){
+        <div class="card" style="width: 15rem">
+          <img
+            height="200"
+            class="card-img-top"
+            src="https://static-00.iconduck.com/assets.00/angular-icon-2048x2048-24b236vf.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <div class="card-text">
+              <div>{{ product.description }}</div>
+              <div>{{ product.price }}</div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
       }@default{
       <div class="d-flex flex-column w-50">
         <form>

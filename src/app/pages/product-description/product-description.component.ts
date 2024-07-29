@@ -63,7 +63,10 @@ export class ProductDescriptionComponent implements OnInit {
         (prod: any) => prod.id === this.product.id
       );
       if (isProductExist)
-        isProductExist.request.push(this.user.getLoggedInUser());
+        isProductExist.request.push({
+          ...this.user.getLoggedInUser(),
+          message: this.sendMessageForm.value.message,
+        });
       this.db.setAllData(allData);
       this.product.alreadySent = true;
     } else this.sendMessageForm.markAllAsTouched();
