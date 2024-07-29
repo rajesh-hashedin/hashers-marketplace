@@ -9,10 +9,16 @@
           class="form-control"
           id="email"
           placeholder="email"
+          email
         />
         @if (expenseForm.get("email")?.hasError("required") &&
         expenseForm.get("email")?.touched) {
         <div class="form-text text-danger fw-bold">email is required</div>
+        } @if (expenseForm.get("email")?.hasError("pattern") &&
+        expenseForm.get("email")?.touched) {
+        <div class="form-text text-danger fw-bold">
+          email pattern is invalid
+        </div>
         }
       </div>
       <div class="mb-3">

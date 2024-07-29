@@ -26,11 +26,15 @@ export class LoginComponent {
     private user: UserService
   ) {
     this.expenseForm = this.fb.group({
-      email: new FormControl('', [Validators.required]),
+      email: new FormControl('', [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$'),
+      ]),
       password: new FormControl('', [Validators.required]),
     });
   }
   onSubmit() {
+    console.log(this.expenseForm);
     if (this.expenseForm.valid) {
       const isUserExist = this.db
         .getData('users')
