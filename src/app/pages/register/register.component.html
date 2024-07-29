@@ -60,13 +60,11 @@
           type="text"
           class="form-control"
           id="confirmPassword"
-          placeholder="confirmPassword"
+          placeholder="Re-enter password"
         />
         @if (registerForm.get("confirmPassword")?.hasError("required") &&
         registerForm.get("confirmPassword")?.touched) {
-        <div class="form-text text-danger fw-bold">
-          confirmPassword is required
-        </div>
+        <div class="form-text text-danger fw-bold">Re-enter password</div>
         } @if (registerForm.get('confirmPassword')?.hasError('not_matching')){
         <div class="form-text text-danger fw-bold">Password doesn't match</div>
         }

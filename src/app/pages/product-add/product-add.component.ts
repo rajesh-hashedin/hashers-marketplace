@@ -37,6 +37,7 @@ export class ProductAddComponent {
       this.db.setData('products', {
         id: uuidv4(),
         ownerEmail: this.user.getLoggedInUser().email,
+        ownerName: this.user.getLoggedInUser().name,
         ...this.productAddForm.value,
         request: [],
       });

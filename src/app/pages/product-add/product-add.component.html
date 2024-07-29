@@ -17,21 +17,8 @@
       </div>
       <div class="mb-3">
         <input
-          formControlName="description"
-          type="text"
-          class="form-control"
-          id="description"
-          placeholder="description"
-        />
-        @if (productAddForm.get("description")?.hasError("required") &&
-        productAddForm.get("description")?.touched) {
-        <div class="form-text text-danger fw-bold">description is required</div>
-        }
-      </div>
-      <div class="mb-3">
-        <input
           formControlName="price"
-          type="text"
+          type="number"
           class="form-control"
           id="price"
           placeholder="price"
@@ -39,6 +26,19 @@
         @if (productAddForm.get("price")?.hasError("required") &&
         productAddForm.get("price")?.touched) {
         <div class="form-text text-danger fw-bold">price is required</div>
+        }
+      </div>
+      <div class="mb-3">
+        <textarea
+          formControlName="description"
+          type="text"
+          class="form-control"
+          id="description"
+          placeholder="description"
+        ></textarea>
+        @if (productAddForm.get("description")?.hasError("required") &&
+        productAddForm.get("description")?.touched) {
+        <div class="form-text text-danger fw-bold">description is required</div>
         }
       </div>
       <div class="d-flex gap-2">

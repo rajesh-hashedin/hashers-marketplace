@@ -3,11 +3,12 @@ import { Product } from '../../core/models/common.model';
 import { DBService } from '../../core/services/db.service';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../core/services/user.service';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, CurrencyPipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })

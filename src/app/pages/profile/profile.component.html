@@ -43,7 +43,7 @@
             <h5 class="card-title">{{ product.name }}</h5>
             <div class="card-text">
               <div>{{ product.description }}</div>
-              <div>{{ product.price }}</div>
+              <div>{{ product.price | currency : "INR" }}</div>
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@
             <h5 class="card-title">{{ product.name }}</h5>
             <div class="card-text">
               <div>{{ product.description }}</div>
-              <div>{{ product.price }}</div>
+              <div>{{ product.price | currency : "INR" }}</div>
             </div>
           </div>
         </div>

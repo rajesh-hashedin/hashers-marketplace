@@ -9,8 +9,9 @@
     </div>
     <div class="col">
       <h1>{{ product.name }}</h1>
-      <h5>{{ product.price }}</h5>
+      <h5>{{ product.price | currency : "INR" }}</h5>
       <div>{{ product.description }}</div>
+      <h6>Owner name: {{ product.ownerName }}</h6>
       @if(!product.ownProduct){ @if(product.alreadySent){
       <button class="btn btn-info">Already Sent</button>
       } @else{

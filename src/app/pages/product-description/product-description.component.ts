@@ -9,13 +9,13 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { UserService } from '../../core/services/user.service';
 
 @Component({
   selector: 'app-product-description',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, CurrencyPipe],
   templateUrl: './product-description.component.html',
   styleUrl: './product-description.component.css',
 })
@@ -37,6 +37,7 @@ export class ProductDescriptionComponent implements OnInit {
       request: [],
       alreadySent: false,
       ownerEmail: '',
+      ownerName: '',
       ownProduct: false,
     };
     this.sendMessageForm = this.fb.group({

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { DB_NAME } from './core/constants/common';
 import { sampleData } from './core/constants/sample-data';
@@ -12,6 +12,7 @@ import { DBService } from './core/services/db.service';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
+  loggedInUser = { name: '' };
   constructor(private db: DBService, private router: Router) {
     if (!localStorage.getItem(DB_NAME)) {
       localStorage.setItem(DB_NAME, JSON.stringify(sampleData));

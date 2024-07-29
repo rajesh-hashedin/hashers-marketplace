@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, CurrencyPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { UserService } from '../../core/services/user.service';
 import { IncomingRequest, Product } from '../../core/models/common.model';
@@ -7,7 +7,7 @@ import { DBService } from '../../core/services/db.service';
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, CurrencyPipe],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
 })

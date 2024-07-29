@@ -10,6 +10,7 @@ export interface Product {
   price: string;
   description: string;
   ownerEmail: string;
+  ownerName: string;
   request: any[];
   alreadySent: boolean;
   ownProduct: boolean;

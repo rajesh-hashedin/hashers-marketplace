@@ -13,18 +13,21 @@
       <h5 class="card-title">{{ product.name }}</h5>
       <div class="card-text">
         <div>{{ product.description }}</div>
-        <div>{{ product.price }}</div>
+        <div>{{ product.price | currency : "INR" }}</div>
       </div>
       @if(product.alreadySent){
-      <button (click)="showProductDescription(product.id)" class="btn btn-info">
-        {{ product.ownProduct ? "See" : "Already Sent" }}
+      <button
+        (click)="showProductDescription(product.id)"
+        class="{{ product.ownProduct ? 'btn btn-warning' : 'btn btn-info' }}"
+      >
+        {{ product.ownProduct ? "View" : "Already Sent" }}
       </button>
       } @else{
       <button
         (click)="showProductDescription(product.id)"
-        class="btn btn-primary"
+        class="{{ product.ownProduct ? 'btn btn-warning' : 'btn btn-primary' }}"
       >
-        {{ product.ownProduct ? "See" : "Buy" }}
+        {{ product.ownProduct ? "View" : "Buy" }}
       </button>
       }
     </div>
